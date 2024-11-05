@@ -1,0 +1,95 @@
+/* Загальні стилі */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    margin: 0;
+    color: #333;
+}
+
+/* Стилі контейнера додатка */
+#app {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+#app:hover {
+    transform: translateY(-5px);
+}
+
+/* Заголовок */
+#app h1 {
+    color: #4e54c8;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Стилі для текстових елементів */
+label {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 15px;
+    color: #333;
+}
+
+/* Стилі для інпутів та випадаючих списків */
+select, input[type="date"], input[type="time"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #f9f9ff;
+    color: #555;
+    transition: border-color 0.3s;
+}
+
+select:focus, input[type="date"]:focus, input[type="time"]:focus {
+    border-color: #4e54c8;
+    outline: none;
+}
+
+/* Стилі для кнопки */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4e54c8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #3b42c4;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Стиль для підтвердження бронювання */
+#confirmation {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e0e7ff;
+    color: #4e54c8;
+    font-size: 0.95em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

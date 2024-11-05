@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Купівля квитків у кінотеатр</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Купівля квитків у кінотеатр</h1>
+        <label for="movie">Виберіть фільм:</label>
+        <select id="movie">
+            <option value="Детпул 3">Детпул 3</option>
+            <option value="Тітанік">Тітанік</option>
+            <option value="Інтерстеллар">Інтерстеллар</option>
+            <option value="Матриця">Матриця</option>
+            <option value="Славні хлопці">Славні хлопці</option>
+            <option value="Гладіатор">Гладіатор</option>
+            <option value="Зелена миля">Зелена миля</option>
+            <option value="Король Лев">Король Лев</option>
+            <option value="ВОЛЛ-І">ВОЛЛ-І</option> 
+            <option value="Історія іграшок">Історія іграшок</option>
+            <option value="Месники">Месники</option>
+            <option value="Гра в імітацію">Гра в імітацію</option>
+            <option value="Шоу Трумена">Шоу Трумена</option>
+        </select>
+        <label for="date">Дата:</label>
+        <input type="date" id="date">
+        <label for="time">Час:</label>
+        <input type="time" id="time">
+        <button onclick="bookTicket()">Забронювати квиток</button>
+        <div id="confirmation"></div>
+    </div>
+    <script src="app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+<script>
+    // Налаштування Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyCeWM0bB5Ws0VouAwhKdTwUAVecnsl51cQ",
+        authDomain: "cinema-289e5.firebaseapp.com",
+        databaseURL: "firebase-adminsdk-81vxe@cinema-289e5.iam.gserviceaccount.com",
+        projectId: "cinema-289e5",
+        storageBucket: "cinema-289e5.firebasestorage.app",
+        messagingSenderId: "551367304040",
+        appId: "1:551367304040:ios:ad301729b7a29ca945acdd"
+    };
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database(app);
+
+    // Збереження бронювання у Firebase
+    function saveBooking(movie, date, time) {
+        const bookingRef = database.ref('bookings').push();
+        bookingRef.set({
+            movie,
+            date,
+            time
+        });
+        console.log('Бронювання збережено');
+    }
+</script>
+
+</body>
+</html>
